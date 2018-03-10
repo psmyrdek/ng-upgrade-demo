@@ -1,0 +1,17 @@
+{
+  "name": "ng-upgrade-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:angularjs": "webpack client-app/src/index.js --output client-app/dist/angularjs-bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/cli": "^1.7.3",
+    "angular": "1.6.9",
+    "webpack": "4.1.1",
+    "webpack-cli": "2.0.11"
+  }
+}
