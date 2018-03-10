@@ -1,2 +1,4 @@
 angular
-    .module('sample', []);
+    .module('sample', [
+        'dependency'
+    ]);

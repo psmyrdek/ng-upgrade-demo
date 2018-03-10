@@ -4,14 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:angularjs": "webpack client-app/src/index.js --output client-app/dist/angularjs-bundle.js"
+    "start": "npm run clean && npm run build:angularjs && npm run copy:deps && npm run watch:angular",
+    "start:node": "node app.js",
+    "clean": "rm -rf client-app-next/dist",
+    "copy:deps": "cp -R client-app/dist/ client-app-next/dist/",
+    "build:angularjs": "webpack client-app/src/index.js --output client-app/dist/angularjs-bundle.js",
+    "watch:angular": "cd client-app-next && ./node_modules/.bin/ng build --aot=true --watch ---delete-output-path=false"
   },
-  "author": "",
+  "author": "psmyrdek",
   "license": "ISC",
   "devDependencies": {
     "@angular/cli": "^1.7.3",
+    "@types/angular": "1.6.43",
     "angular": "1.6.9",
     "webpack": "4.1.1",
     "webpack-cli": "2.0.11"
+  },
+  "dependencies": {
+    "express": "4.16.2",
+    "pug": "2.0.1"
   }
 }
